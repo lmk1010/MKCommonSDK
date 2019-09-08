@@ -1,5 +1,6 @@
 package com.mk.baseservice.dao;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,7 +19,7 @@ public interface BaseInstanceDao
      * @Param [id]
      * @return java.lang.Object
      **/
-    public Object selectInstanceById(long id);
+    public Object selectInstanceById(String modelName,long id);
     
     /**
     *
@@ -26,18 +27,29 @@ public interface BaseInstanceDao
      * @Description //TODO 根据自定义sql查询
      * @Date 22:57 2019-09-07
      * @Param [sql]
-     * @return java.lang.Object
+     * @return java.util.List
      **/
-    public Object selectInstanceBySql(String sql);
-    
+    public List<Object> selectInstanceBySql(String sql);
+
     /**
     *
      * @Author liumingkang
-     * @Description //TODO 根据表名和参数进行查询
+     * @Description //TODO 通过sql条件进行查询 动态拼接
+     * @Date 12:29 2019-09-08
+     * @Param [modelName, conditionSql]
+     * @return java.util.List<java.lang.Object>
+     **/
+    public List<Object> selectInstanceByCondition(String modelName,String conditionSql);
+
+    /**
+    *
+     * @Author liumingkang
+     * @Description //TODO 根据表名和参数进行查询 实现动态生成sql 通过占位符拼接
      * @Date 22:59 2019-09-07
      * @Param [modelName, queryParams]
      * @return java.lang.Object
      **/
-    public Object selectInstanceByTable(String modelName, Map<String,Object> queryParams);
+    public List<Object> selectInstanceByTable(String modelName, Map<String,Object> queryParams);
+
     
 }

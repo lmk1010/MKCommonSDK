@@ -1,5 +1,7 @@
 package com.mk.baseservice.service;
 
+import java.util.List;
+
 /**
  * @Author liumingkang
  * @Date 2019-09-07 22:53
@@ -8,5 +10,14 @@ package com.mk.baseservice.service;
  **/
 public interface BaseInstanceManager
 {
+    /**
+    *
+     * @Author liumingkang
+     * @Description //TODO 通过sql直接查询接口
+     * @Date 13:32 2019-09-08
+     * @Param [sql]
+     * @return java.util.List
+     **/
+    public List getInstanceList(String sql);
 
 }
