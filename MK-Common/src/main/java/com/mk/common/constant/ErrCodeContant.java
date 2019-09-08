@@ -14,6 +14,8 @@ public class ErrCodeContant {
     public static final String CHINESE = "zh-cn";
     // 通用错误码
     public static final String COMMON_ERROR = "09000001";
+    // 服务器无响应
+    public static final String SERVER_FAILED = "09000002";
 
 
 }

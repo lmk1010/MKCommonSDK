@@ -1,6 +1,8 @@
 package com.mk.common.utils.network;
 
 import com.google.common.base.Charsets;
+import com.mk.common.constant.ErrCodeContant;
+import com.mk.common.exception.MKException;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -41,8 +43,7 @@ public class NetUtils
             return EntityUtils.toString(response.getEntity());
         }
         catch (Exception e) {
-            e.printStackTrace();
-            return null;
+            throw new MKException(ErrCodeContant.SERVER_FAILED,e);
         }
         finally {
             get.releaseConnection();
@@ -77,7 +78,7 @@ public class NetUtils
             return EntityUtils.toString(response.getEntity());
         }
         catch (Exception e) {
-            throw new Exception("postRequest -- Client protocol exception!", e);
+            throw new MKException("postRequest -- Client protocol exception!", e);
         }
         finally {
             post.releaseConnection();

@@ -22,10 +22,14 @@ public class MKException extends Exception{
 
     private Exception ex;
 
-
     public MKException()
     {
 
+    }
+
+    public MKException(String code, Exception ex) {
+        this.code = code;
+        this.ex = ex;
     }
 
     public MKException(String code) {

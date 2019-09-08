@@ -2,6 +2,7 @@ package com.mk.common.utils.errorcode;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.mk.common.constant.ErrCodeContant;
 import com.mk.common.entity.ErrorCode;
 
 /**
@@ -10,7 +11,7 @@ import com.mk.common.entity.ErrorCode;
  * @Destcription TODO 错误码工具类
  * @Version 1.0
  **/
-public class ErrorCodeUtil {
+public abstract class ErrorCodeUtil {
     
     /*
     *
@@ -20,10 +21,7 @@ public class ErrorCodeUtil {
      * @Param [ex]
      * @return com.mk.common.entity.ErrorCode
      **/
-    public static ErrorCode tanslateInfo(Exception ex)
-    {
-        return null;
-    }
+    public abstract ErrorCode tanslateInfo(Exception ex);
 
     /*
     *
@@ -33,10 +31,7 @@ public class ErrorCodeUtil {
      * @Param [code]
      * @return com.mk.common.entity.ErrorCode
      **/
-    public static ErrorCode tanslateInfo(String code)
-    {
-        return null;
-    }
+    public abstract ErrorCode tanslateInfo(String code);
 
     /*
     *
@@ -46,10 +41,7 @@ public class ErrorCodeUtil {
      * @Param [code, local]
      * @return com.mk.common.entity.ErrorCode
      **/
-    private ErrorCode tanslate(String code,String local)
-    {
-        return null;
-    }
+    public abstract ErrorCode tanslate(String code,String local);
 
     /*
     *
