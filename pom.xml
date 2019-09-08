@@ -10,7 +10,6 @@
 
     <modules>
         <module>MK-Common</module>
-        <module>MK-BaseService</module>
     </modules>
     
 </project>
